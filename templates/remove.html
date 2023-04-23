@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Remove
+{% endblock %}
+
+{% block username %}
+    {{ user_name }}
+{% endblock %}
+
+{% block main %}
+    <form action="/remove" method="post">
+        <div class="mb-3">
+            <select class="form-select mx-auto w-auto" name="movie">
+                <option disabled selected value="select" >select</option>
+                {% for movie in movies %}
+                    <option value="{{ movie }}">{{ movie.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Remove</button>
+    </form>
+{% endblock %}

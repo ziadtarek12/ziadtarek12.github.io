@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block username %}
+    {{ user_name }}
+{% endblock %}
+
+{% block main %}
+
+    <div class="mb-3">
+        <table class="table table-striped">
+            <tr>
+                <th>Name</th>
+                <th>Rating</th>
+                <th>Year</th>
+                <th>Runtime</th>
+                <th>Director</th>
+            </tr>
+            {% for movie in movies %}
+                <tr>
+                    <td>{{ movie.name }}</td>
+                    <td>{{ movie.RATING }}</td>
+                    <td>{{ movie.year }}</td>
+                    <td>{{ movie.time}}</td>
+                    <td>{{ movie.director }}</td>
+                </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+
+{% endblock %}

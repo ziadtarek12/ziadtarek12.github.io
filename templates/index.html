@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block username %}
+    {{ user_name }}
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3">
+            {% for info in user_info %}
+                <h1 class="text-muted text-primary">{{ info.name }}
+                    <img src="{{ info.poster_link }}" alt="{{ info.name }}" class="rounded img-fluid":>
+                </h1>
+                <h2>Director: {{ info.director }}</h2>
+                <p>Rating: {{ info.RATING }}</p>
+                <p>Year: {{ info.year }}</p>
+                <p>Runtime: {{ info.time }}</p>
+            {% endfor %}
+
+    </div>
+    <div class="mb-3">
+        <a href="/change" >Change password</a>
+    </div>
+{% endblock %}
